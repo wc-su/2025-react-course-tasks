@@ -1,0 +1,34 @@
+.task2-login,
+.task2-products {
+  min-height: 100vh;
+  text-align: center;
+}
+
+.task2-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.task2-form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+
+.task2-login img,
+.task2-products img {
+  object-fit: contain;
+  max-width: 100%;
+}
+
+.task2-primary-image {
+  height: 300px;
+}
+
+.task2-images {
+  height: 150px;
+}

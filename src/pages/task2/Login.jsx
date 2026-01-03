@@ -61,8 +61,11 @@ function Login() {
 
     try {
       const res = await axios.post(url, payload);
-      localStorage.setItem("hexToken", res.data.token);
+      document.cookie = `hexToken=${res.data.token}; expires=${new Date(
+        res.data.expired
+      )}; path=/`;
 
+      // 顯示倒數計時 Toast，並在結束後導向產品列表頁
       showCountdownToast({
         seconds: 3,
         title: "登入成功",
@@ -90,9 +93,15 @@ function Login() {
   };
 
   useEffect(() => {
-    const token = localStorage.getItem("hexToken");
     // 已有 token 且驗證成功後，導向產品列表頁
     const verifyTokenAndRedirect = async () => {
+      const token = document.cookie
+        .split("; ")
+        .find((row) => row.startsWith("hexToken="))
+        ?.split("=")[1];
+
+      if (!token) return;
+
       const isAuth = await checkAuth(token);
       if (isAuth) {
         navigate("/task2/products");

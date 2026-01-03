@@ -17,7 +17,10 @@ function Products() {
   const [tempProduct, setTempProduct] = useState(null);
 
   const getProducts = useCallback(async () => {
-    const token = localStorage.getItem("hexToken");
+    const token = document.cookie
+      .split("; ")
+      .find((row) => row.startsWith("hexToken="))
+      ?.split("=")[1];
     setIsLoading(true);
     try {
       const res = await axios.get(
@@ -42,7 +45,10 @@ function Products() {
   }, [API_BASE, API_PATH, setIsLoading, setShowToast, setToastInfo]);
 
   useEffect(() => {
-    const token = localStorage.getItem("hexToken");
+    const token = document.cookie
+      .split("; ")
+      .find((row) => row.startsWith("hexToken="))
+      ?.split("=")[1];
 
     // 驗證 token 並取得產品
     const initProducts = async () => {
@@ -83,7 +89,7 @@ function Products() {
             type="button"
             className="btn btn-primary"
             onClick={() => {
-              localStorage.removeItem("hexToken");
+              document.cookie = `hexToken=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/`;
               navigate("/task2");
             }}
           >

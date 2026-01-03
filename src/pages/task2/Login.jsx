@@ -88,7 +88,7 @@ function Login() {
   const handleInputChange = (e) => {
     setFormData((prevFormatData) => ({
       ...prevFormatData,
-      [e.target.id]: e.target.value,
+      [e.target.name]: e.target.value,
     }));
   };
 
@@ -121,6 +121,7 @@ function Login() {
                 type="email"
                 className="form-control"
                 id="username"
+                name="username"
                 placeholder="name@example.com"
                 value={formData.username}
                 onChange={handleInputChange}
@@ -134,6 +135,7 @@ function Login() {
                 type="password"
                 className="form-control"
                 id="password"
+                name="password"
                 placeholder="Password"
                 value={formData.password}
                 onChange={handleInputChange}

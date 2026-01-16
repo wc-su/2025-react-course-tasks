@@ -11,11 +11,16 @@ function App() {
           </Link>
         </li>
         <li className="text-center mb-3">
+          <Link to="/task3" className="btn btn-primary mx-auto">
+            第三週 - 熟練 React.js
+          </Link>
+        </li>
+        <li className="text-center mb-3">
           <Link
             to="/task3"
             className="btn btn-outline-primary mx-auto disabled"
           >
-            第三週 - 熟練 React.js
+            第四週 - 元件化
           </Link>
         </li>
       </ul>

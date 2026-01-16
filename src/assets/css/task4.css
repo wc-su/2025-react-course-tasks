@@ -1,0 +1,111 @@
+.task4-login,
+.task4-products {
+  min-height: 100vh;
+  text-align: center;
+}
+
+.task4-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.task4-form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+
+.task4-login img,
+.task4-products img {
+  max-width: 100%;
+}
+
+.task4-primary-image {
+  max-height: 300px;
+  min-height: 200px;
+}
+
+.task4-images {
+  width: 100px;
+  height: 150px;
+}
+
+.task4-images-wrapper {
+  width: 100px; /* 與圖片同寬 */
+}
+
+.task4-image-btn {
+  color: rgb(144, 144, 144);
+  border-radius: 50%;
+  padding: 1px;
+  transform: translate(-50%, -50%);
+  transition:
+    color 0.3s,
+    background-color 0.3s,
+    transform 0.3s;
+}
+.task4-image-btn:hover {
+  color: white;
+  background-color: gray;
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.task4-upload-label {
+  cursor: pointer;
+  color: rgb(222, 226, 230); /* Bootstrap border color */
+  border: 1px solid rgb(222, 226, 230);
+  border-radius: 4px;
+  transition:
+    color 0.2s,
+    border 0.2s,
+    background-color 0.2s;
+}
+.task4-upload-label:hover {
+  color: rgb(168, 174, 176); /* Darker */
+  border-color: rgb(168, 174, 176);
+}
+.task4-upload-label.dragging {
+  color: rgb(150, 156, 158);
+  border: 1px dashed rgb(150, 156, 158);
+  background-color: rgba(13, 110, 253, 0.1);
+}
+
+.task4-primary-image-wrapper .task4-upload-label i {
+  font-size: 38px;
+  pointer-events: none;
+}
+.task4-images-wrapper .task4-upload-label i {
+  font-size: 20px;
+  pointer-events: none;
+}
+
+.task4-btn-group .dropdown-menu {
+  --bs-dropdown-border-color: rgb(229, 201, 201);
+  --bs-dropdown-min-width: 8rem;
+}
+.task4-btn-group .dropdown-toggle::after {
+  display: none;
+}
+.task4-btn-group .dropdown-item:hover {
+  --bs-dropdown-link-hover-bg: rgba(242, 223, 223, 0.3);
+}
+
+.task4-star-rating label {
+  cursor: pointer;
+}
+.task4-star-rating label {
+  color: rgba(128, 128, 128, 0.2);
+}
+.task4-star-rating label:hover {
+  color: rgba(128, 128, 128, 0.4);
+}
+.task4-star-rating input:checked ~ label {
+  color: rgba(255, 193, 7, 0.6);
+}
+.task4-star-rating input:checked ~ label:hover {
+  color: rgba(255, 193, 7, 1);
+}

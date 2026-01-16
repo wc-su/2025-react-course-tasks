@@ -16,11 +16,16 @@ function App() {
           </Link>
         </li>
         <li className="text-center mb-3">
+          <Link to="/task4" className="btn btn-primary mx-auto">
+            第四週 - 元件化
+          </Link>
+        </li>
+        <li className="text-center mb-3">
           <Link
-            to="/task3"
+            to="/task5"
             className="btn btn-outline-primary mx-auto disabled"
           >
-            第四週 - 元件化
+            第五週 - Vite、React Router
           </Link>
         </li>
       </ul>

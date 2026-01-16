@@ -34,7 +34,6 @@ function Products() {
       openLoading();
       try {
         const response = await fetchProductsApi();
-        console.log(response);
         setProducts(Object.values(response.data.products));
       } catch (error) {
         openToast({
@@ -72,7 +71,7 @@ function Products() {
         `${API_BASE}/api/${API_PATH}/admin/product/${productId}`,
         {
           headers: { Authorization: token },
-        }
+        },
       );
       await fetchProductsApi();
       const response = await fetchProductsApi();
@@ -115,7 +114,7 @@ function Products() {
         await axios.post(
           `${API_BASE}/api/${API_PATH}/admin/product`,
           { data },
-          { headers: { Authorization: token } }
+          { headers: { Authorization: token } },
         );
       } catch (error) {
         isError = true;
@@ -130,7 +129,7 @@ function Products() {
         await axios.put(
           `${API_BASE}/api/${API_PATH}/admin/product/${product.id}`,
           { data },
-          { headers: { Authorization: token } }
+          { headers: { Authorization: token } },
         );
       } catch (error) {
         isError = true;
@@ -300,7 +299,7 @@ function Products() {
                   <img
                     className={clsx(
                       "img-fluid",
-                      product.imageUrl && "task3-primary-image"
+                      product.imageUrl && "task3-primary-image",
                     )}
                     src={product.imageUrl}
                     alt={`${product.title} 主圖`}

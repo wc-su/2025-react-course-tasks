@@ -34,6 +34,7 @@ function Products() {
       openLoading();
       try {
         const response = await fetchProductsApi();
+        console.log(response);
         setProducts(Object.values(response.data.products));
       } catch (error) {
         openToast({
@@ -104,7 +105,7 @@ function Products() {
       unit: product.unit,
       description: product.description,
       content: product.content,
-      is_enabled: product.is_enabled,
+      is_enabled: product.is_enabled ? 1 : 0,
       imageUrl: product.imageUrl,
       imagesUrl: product.imagesUrl || [],
     };
